@@ -1,0 +1,52 @@
+@import "variables.less";
+
+.ps-paypal {
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}
+
+.ps-paypal p {
+  color: black;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+//Paypal image  - base 64
+.ps-paypal button {
+  width: 125px;
+}
+
+.ps-paypal-success {
+  border-radius: 3px;
+  padding:2%;
+  justify-content: center;
+  border: 1px solid;
+  border-color: @primary-color-positive;
+  background-color: @primary-background-color-positive;
+}
+
+.ps-paypal-step {
+  border-radius: 3px;
+  padding:2%;
+  justify-content: center;
+  border: 1px solid;
+  border-color: @primary-color-negative;
+  background-color: @primary-background-color-negative;
+}
+
+.ps-paypal-success p {
+  text-align: justify;
+  color: @primary-color-positive;
+}
+
+.ps-paypal-fail p {
+  text-align: center;
+  border-radius: 3px;
+  padding:2%;
+  justify-content: center;
+  border: 1px solid;
+  border-color: @primary-color-negative;
+  background-color:@primary-background-color-negative;
+  color: @primary-color-negative;
+}

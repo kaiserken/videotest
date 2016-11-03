@@ -1,0 +1,88 @@
+//
+// TODO: rename this file when component is renamed
+//
+
+@import "variables.less";
+
+.ps-channel {
+  .ps-channel-title {
+    color: @primary-color2;
+    font-weight: lighter;
+    font-size: 30px;
+  }
+}
+
+.ps-channel-access-list {
+  color: @primary-color3;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: left;
+}
+
+.ps-channel-access {
+  color: @primary-color2;
+  font-size: 15px;
+  font-style: normal;
+  text-align: left;
+}
+
+.ps-channel-details {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #000;
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-style: italic;
+
+}
+.ps-description {
+  font-size: 25px;
+  font-weight:lighter;
+  color: @primary-color3;
+  text-align: left;
+}
+
+.ps-description-long {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 16px;
+  color: @primary-color2;
+}
+
+.ps-pictures {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-basis: 100%;
+  margin-top: 10px;
+}
+
+.ps-picture-feature {
+  width: 100%;
+  border-radius: 5px;
+  //border: 8px solid black;
+  //box-shadow: 1px 1px 1px #888888;
+  margin-bottom: 5px;
+}
+
+.ps-picture {
+  width: 30%;
+  border-radius: 5px;
+  border: 8px solid black;
+  transform: scale(1.00);
+  transition: transform 0.5s, opacity 0.5s;
+  box-shadow: 1px 1px 1px #888888;
+  margin-bottom: 5px;
+}
+
+.ps-picture:hover {
+  transform: scale(1.15);
+}

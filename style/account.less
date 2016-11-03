@@ -1,0 +1,56 @@
+@import "variables.less";
+
+.ps-account-form-container {
+  flex: @form-container-size;
+  border-radius: 5px;
+  max-width: 700px;
+  padding: 20px;
+  flex-basis: 100%;
+  align-self: stretch;
+  background-color: @primary-background-form;
+  box-shadow: 2px 2px 2px #888888;
+}
+.ps-account-nav{
+  padding-top: 6px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;;
+  align-items: flex-start;
+  flex-basis: 110%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.ps-account-nav-link{
+  font-size: 13px;
+  margin-right: 15px;
+  padding: 6px;
+  font-weight: bold;
+  flex-basis: auto;
+  color: @primary-color-links;
+  text-decoration: none;
+}
+.ps-account-nav-link.active{
+  //text-decoration: underline;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .1);
+}
+.ps-close-title {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  // border-bottom: 1.5px solid black;
+  // margin-bottom: 5px;
+  width: 55%;
+}
+.ps-close {
+  width: 150px;
+  margin-top: 0;
+}
+.ps-close-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

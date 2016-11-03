@@ -1,0 +1,111 @@
+@import "variables.less";
+
+.ps-form-container {
+  flex: @form-container-size;
+  border-radius: 5px;
+  padding: 4%;
+  height:400px;
+  width:400px;
+  align-self: stretch;
+  background-color: @primary-background-form;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+.ps-form-container-signin {
+  animation:fadeIn ease-in 1;
+  animation-duration: 1.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+// not child of <form>
+.ps-form-title {
+  //font-family: sans-serif;
+  color: @primary-color3;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+//
+// Containter to hold label/input pairs
+//
+.ps-namefields {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-basis: 100%;
+
+  .ps-first{
+    flex-basis: 47.5%;
+  }
+
+  .ps-last{
+    flex-basis: 47.5%;
+  }
+
+  .ps-creditNum{
+    flex-basis: 47.5%;
+  }
+
+  .ps-creditExp{
+    flex-basis: 27%;
+  }
+
+  .ps-code {
+    width: 15%;
+  }
+}
+
+.ps-radiofields {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: flex-start;
+  flex-basis: 100%;
+}
+
+.ps-radio {
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+}
+
+.ps-radio-label {
+
+}
+
+.ps-radio-button {
+  width: 15px;
+  margin-right: 3px;
+}
+
+.ps-coupon-apply {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ps-coupon-apply {
+  label {
+    margin-right: 3px;
+  }
+}
+
+.ps-credit-picture {
+  width: 150px;
+  float: right;
+}
+
+.ps-form-128bit {
+  text-align: center;
+  font-size: 14px;
+}

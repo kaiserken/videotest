@@ -1,0 +1,28 @@
+@import "variables.less";
+
+//
+// Main container for /subscribe route
+//
+.ps-subscribe-main-container {
+  margin: 0 auto;
+  max-width: 1024px;
+  margin-top: 85px;
+  display: flex;
+  padding:1%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.ps-channel-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex: @channelinfo-container-size;
+  padding: 2%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  align-self: stretch;
+  background-color: @primary-background-channel;
+}

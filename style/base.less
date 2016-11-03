@@ -1,0 +1,64 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: no-repeat center center fixed;
+  background-color: #f3f3f3;
+  font-family:  'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Calibri Light, Calibri, 'Calibri Light', 'Calibri-Light', 'Calibri', Arial, 'Lucida Grande', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#container{
+  width: 100%;
+}
+
+.ps-app-container {
+  width: 100%;
+}
+
+//
+// TODO: organize/split into reusable components and route components
+//
+
+//
+// Components (Reuseable)
+//
+
+@import 'button.less';
+@import 'errors.less';
+@import 'form.less';
+@import 'input.less';
+@import 'loader.less';
+@import 'logo.less';
+@import 'background-collage.less';
+
+
+@import 'channel-info.less';
+@import 'footer.less';
+@import 'paypal.less';
+@import 'subscribed.less';
+
+@import 'account.less';
+@import 'payment-info.less';
+@import 'change-email.less';
+@import 'memberships.less';
+@import 'rentals-purchases.less';
+@import 'ps-video.css';
+
+
+
+
+// Routes
+@import 'routes/subscribe.less';
+@import 'routes/colophon.less';
+
+
+// TODO: this needs to be refactored
+@import 'queries.less';
