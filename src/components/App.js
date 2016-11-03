@@ -1,61 +1,57 @@
-
+import VideoPlayer from './VideoPlayer';
 
 
 export default class App extends React.Component {
-  componentDidMount(){
-    videojs.Flash.formats = {
-      'video/flv': 'FLV',
-      'video/x-flv': 'FLV',
-      'video/mp4': 'MP4',
-      'video/m4v': 'MP4',
-      'application/x-mpegurl': 'MP4',
-      'vnd.apple.mpegURL': 'MP4'
-    };
-    const src  = "http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8";
-    videojs.options.techOrder = ["html5", "flash"];
+  constructor(props){
+    super(props);
+      this.state = {
+        videos: [
+          'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8',
+          'http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8',
+          'http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8',
+          'http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8',
+          'http://cdn-fms.rbs.com.br/hls-vod/sample1_1500kbps.f4v.m3u8',
+          'http://cdn-fms.rbs.com.br/vod/hls_sample1_manifest.m3u8',
+          'http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8',
+          'http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8',
+          'http://184.72.239.149/vod/smil:BigBuckBunny.smil/playlist.m3u8',
+          'http://playertest.longtailvideo.com/adaptive/bipbop/bipbop.m3u8',
+        ],
+        selectedVideo: ''
 
-    // See https://github.com/mangui/flashls
-    videojs.options.flash = {
-      swf: "./vsg/video-js.swf",
-      flashVars: {
-        hls_startfromlevel:             0,
-        hls_seekfromlevel:              0,
-        hls_capleveltostage:            false,
-        hls_debug:                      true,
-        hls_debug2:                     true,
-        hls_usehardwarevideodecoder:    true,
-        hls_minbufferlength:            10,
-        hls_lowbufferlength:            3,
-        hls_maxbufferlength:            60,
-        hls_seekmode:                   'KEYFRAME',
-        hls_caplevelonfpsdrop:          false,
-        hls_smoothautoswitchonfpsdrop:  false
-      },
-      params: {
-        allowfullscreen: "true",
-        wmode: "direct",
-        allowscriptaccess: "always",
-      },
-    };
-
-    var options = {
-      plugins: {
-        levels: {},
-
-        chromecast: {
-            appId: '9FA6AF11',
-            metadata: {
-                title: 'Channel',
-            }
-        }
-      }
-    };
-    videojs("video", options, function () {
-      this.src({ type: "application/x-mpegURL", src: src });
-    });
+      };
   }
 
+  onVideoClick(video) {
+    this.setState({selectedVideo: video});
+  }
+
+  renderVideoList(){
+    let videoArray = this.state.videos.map((video, index) => {
+      return (
+        <div
+          className="ps-video-list"
+          key={index}
+          onClick = {this.onVideoClick.bind(this, video)}
+        >
+        {video}
+        </div>
+      );
+    });
+    return videoArray;
+  }
+
+  renderVideoPlayer(){
+    if (this.state.selectedVideo){
+      return  (
+        <div className="ps-video-container">
+          <VideoPlayer video = {this.state.selectedVideo}></VideoPlayer>
+        </div>
+      );
+    }
+  }
   render() {
+    console.log(this.state.selectedVideo);
     return (
       <div className='ps-app-container'>
           <div className="ps-logo-container">
@@ -63,11 +59,8 @@ export default class App extends React.Component {
           </div>
         <div className="ps-subscribe-container">
           <div className= "ps-subscribe-main-container" >
-            <div className="ps-form-container">
-              This is App
-              <video id="video" className="video-js vjs-default-skin" controls width="100%" height="100%">
-              </video>
-            </div>
+            {this.renderVideoPlayer()}
+            {this.renderVideoList()}
           </div>
         </div>
       </div>
